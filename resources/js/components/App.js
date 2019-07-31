@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {HashRouter, Route, Switch} from "react-router-dom";
 import CourseList from './CourseList';
-import NotFound from './NotFound'
+//import NotFound from './NotFound'
 import CursoLista from './CursoLista';
 
 
@@ -18,11 +18,11 @@ const App = () => {
 }
 const Root =() => (
     <HashRouter>
-        <switch>
+        <Switch>
             <Route path="/" exact component={App} />
             <Route path="/curso/:id" exact component={CursoLista} />
-            <Route component={NotFound}/>
-        </switch>
+            
+        </Switch>
     </HashRouter>
 );
 
