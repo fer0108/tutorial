@@ -60512,7 +60512,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65492,9 +65492,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _CourseList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CourseList */ "./resources/js/components/CourseList.js");
-/* harmony import */ var _NotFound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NotFound */ "./resources/js/components/NotFound.js");
-/* harmony import */ var _CursoLista__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CursoLista */ "./resources/js/components/CursoLista.js");
-
+/* harmony import */ var _CursoLista__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CursoLista */ "./resources/js/components/CursoLista.js");
 
 
 
@@ -65510,16 +65508,14 @@ var App = function App() {
 };
 
 var Root = function Root() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("switch", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
     exact: true,
     component: App
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/curso/:id",
     exact: true,
-    component: _CursoLista__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    component: _NotFound__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _CursoLista__WEBPACK_IMPORTED_MODULE_4__["default"]
   })));
 };
 
@@ -65593,63 +65589,6 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
-
-
-
-function CourseList() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
-      _useState2 = _slicedToArray(_useState, 2),
-      loading = _useState2[0],
-      setLoading = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-      _useState4 = _slicedToArray(_useState3, 2),
-      cursos = _useState4[0],
-      setCursos = _useState4[1];
-
-  var cargarCursos = function cargarCursos() {
-    Axios.get('/cursos').then(function (resp) {
-      setLoading(resp.data);
-    })["catch"](function (err) {
-      setLoading(false);
-      console.log('Error al cargar los datos');
-    });
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(cargarCursos, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "row"
-  }, loading && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Loading__WEBPACK_IMPORTED_MODULE_2__["default"], null), loading = (_readOnlyError("loading"),  false && false));
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/CursoLista.js":
-/*!***********************************************!*\
-  !*** ./resources/js/components/CursoLista.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CourseList; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Course__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Course */ "./resources/js/components/Course.js");
-/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Loading */ "./resources/js/components/Loading.js");
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -65686,6 +65625,93 @@ function CourseList() {
 
 /***/ }),
 
+/***/ "./resources/js/components/CursoLista.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/CursoLista.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Loading */ "./resources/js/components/Loading.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var CursoLista = function CursoLista(props) {
+  var cargarCurso = function cargarCurso() {
+    var url = "/cursos/".concat(props.match.params.id);
+    axios.get(url).then(function (respu) {
+      setCurso(respu.data);
+      setLoading(false);
+      console.log(respu.data);
+    })["catch"](function (err) {
+      setLoading(false);
+      console.log('error al cargar las cursos');
+    });
+  };
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState4 = _slicedToArray(_useState3, 2),
+      curso = _useState4[0],
+      setCurso = _useState4[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(cargarCurso, [props.match.params.id]);
+  if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container mt-5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-sm-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "card-title"
+  }, curso.curso ? curso.curso : 'Nombre del curso'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, curso.descripcion ? curso.descripcion : 'descripcion del Curso'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, curso.imagen ? curso.imagen : 'link de imagen')))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-sm-8"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-header"
+  }, "Detalles del curso"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, "Desarrollado por: ", curso.desarrollador.nombres, "  ", curso.desarrollador.apellidos, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-sm-12"
+  }, "Niveles", curso.niveles.map(function (nivel) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      key: nivel.id
+    }, nivel.nivel);
+  }))))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CursoLista);
+
+/***/ }),
+
 /***/ "./resources/js/components/Loading.js":
 /*!********************************************!*\
   !*** ./resources/js/components/Loading.js ***!
@@ -65710,33 +65736,6 @@ var Loading = function Loading() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Loading);
-
-/***/ }),
-
-/***/ "./resources/js/components/NotFound.js":
-/*!*********************************************!*\
-  !*** ./resources/js/components/NotFound.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var NotFound = function NotFound(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card m-2"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "card-text"
-  }, "COMPONENTE NOTFOUND ")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Notfound);
 
 /***/ }),
 

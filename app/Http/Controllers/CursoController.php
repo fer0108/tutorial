@@ -73,7 +73,7 @@ class CursoController extends Controller
         $curso->load([
             'desarrollador',
             'lengua',
-            'niveles',
+            'nivel',
         ]);
         return $curso;
 
